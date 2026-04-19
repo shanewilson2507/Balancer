@@ -1,0 +1,58 @@
+#################################################
+# Build outputs (CMake / STM32 / general)
+#################################################
+build/
+Build/
+Debug/
+Release/
+cmake-build-*/
+
+*.o
+*.obj
+*.d
+*.a
+*.lib
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+
+#################################################
+# STM32 / CubeIDE / Eclipse artifacts
+#################################################
+*.launch
+.project
+.cproject
+.settings/
+*.iocbak
+
+#################################################
+# Python
+#################################################
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+env/
+
+#################################################
+# IDEs
+#################################################
+.vscode/
+.idea/
+
+#################################################
+# KiCad - ONLY noise (KEEP designs + GERBERS)
+#################################################
+
+# Backups / autosaves
+*-bak
+*-backups/
+*-rescue.kicad_sch
+*-rescue.kicad_pcb
+*.kicad_sch-bak
+
+# Caches
+fp-info-cache/

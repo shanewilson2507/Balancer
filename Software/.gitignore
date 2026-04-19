@@ -1,0 +1,19 @@
+# === Build output ===
+/Debug/
+/Release/
+/build/
+/*.elf
+/*.bin
+/*.hex
+/*.map
+/*.axf
+
+# === STM32CubeIDE / Eclipse project files ===
+*.cproject
+*.project
+*.mxproject
+.settings/
+*.launch
+
+# === VSCode project files ===
+.vscode/

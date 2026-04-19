@@ -1,0 +1,8 @@
+"Reference","Qty","Value","Footprint","Datasheet","digikey"
+"C1,C3","2","100u","Capacitor_THT:C_Radial_D6.3mm_H11.0mm_P2.50mm","https://www.rubycon.co.jp/wp-content/uploads/catalog-aluminum/YXJ.pdf","1189-2260-ND"
+"C2,C4,C5","3","0.1u","Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder","https://www.yageogroup.com/content/datasheet/asset/file/KEM_C1002_X7R_SMD","399-C0805C104K5RACTUCT-ND"
+"D1,D3","2","SS12","Diode_SMD:D_SMA_Handsoldering","https://services.taiwansemi.com/storage/resources/datasheet/SS12%20SERIES_R2305.pdf","1801-SS12CT-ND"
+"D2","1","LED","LED_SMD:LED_PLCC-2_3x2mm_KA","https://downloads.cree-led.com/files/ds/h/HB-CLM3C-RKW-AKW.pdf","CLM3C-AKW-CUBVA353CT-ND"
+"J3","1","USB_B_Micro","Connector_USB:USB_Micro-B_Amphenol_10118193-0001LF_Horizontal","https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/inputoutput/io_usb_micro.pdf","609-4616-1-ND"
+"R1","1","1.5k","Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder","https://www.vishay.com/docs/28773/crcwce3.pdf","541-4161-1-ND"
+"R2,R3","2","4.7k","Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder","https://www.vishay.com/docs/28773/crcwce3.pdf","541-4131-1-ND"
