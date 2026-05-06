@@ -16,10 +16,17 @@ App::App(const App_Config_t& cfg)
 };
 
 void App::flagUpdateCallback(void* flags) {
-	time_ms++;
 	AppFlags* appFlags = (AppFlags*) flags;
-	appFlags->update_imu = true;
-	appFlags->send_data = true;
+	
+
+	//10ms task divider
+	if (time_ms % 10 == 0) {
+		appFlags->update_imu = true;
+		appFlags->send_data = true;
+		appFlags->update_motor_command = true;
+	}
+
+	time_ms++;
 }
 
 uint64_t App::time_ms = 0u;

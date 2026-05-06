@@ -21,11 +21,18 @@ struct IMU_Data {
     float omega_z;
 };
 
+struct IMU_Bias {
+    float omega_bx;
+    float omega_by;
+    float omega_bz; 
+};
+
 class IMU {
 private:
     I2C_t i2c;
     MPU6050_t mpu;
     IMU_Data data; // internal unmodifiable data
+    IMU_Bias bias;
 
     float accel_scale; // defined to avoid extra runtime divisions
     float gyro_scale;
@@ -33,6 +40,7 @@ public:
     const IMU_Data& dataPublic; // readonly reference to internal data
 public:
     IMU(const IMU_Config_t& imu_cfg);
+    void calibrate();
     void updateData();
 };
 

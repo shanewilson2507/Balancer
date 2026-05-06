@@ -6,6 +6,7 @@ SystemIdentificationApp::SystemIdentificationApp(const App_Config_t& cfg)
 void SystemIdentificationApp::main(void) {
     rightMotor.start();
 	leftMotor.start();
+	imu.calibrate();
 	led.on(); //initialization complete
 
 	const IMU_Data& imuData = imu.dataPublic;
@@ -14,7 +15,7 @@ void SystemIdentificationApp::main(void) {
 	char buff[100];
 	snprintf(buff, sizeof(buff), "t_ms, ml_%%, mr_%%, a_x, a_y, a_z, w_x, w_y, w_z");
 	transmitter.sendLine(std::string(buff));
-
+	
 	flagUpdateTimer.start();
 	
 	while(time_ms <= 5000) {
@@ -35,6 +36,8 @@ void SystemIdentificationApp::main(void) {
 			flags.send_data = false;
 		}
 	}
-
+	
+	rightMotor.setThrottlePercentage(0.0f);
+	leftMotor.setThrottlePercentage(0.0f);
 	led.off(); // transmission complete
 }

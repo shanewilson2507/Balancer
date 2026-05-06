@@ -8,9 +8,10 @@
 #include "IMU.hpp"
 #include "../../Peripherals/MPU6050/inc/MPU6050.h" // "MPU6050.h" // "../../Peripherals/MPU6050/inc/MPU6050.h"
 #include "../../Common/inc/Constants.h" // "Constants.h" // "../../Common/inc/Constants.h"
+#include "../inc/Delay.hpp" // "Delay.hpp"
 
  IMU::IMU(const IMU_Config_t& imu_cfg) 
-    : dataPublic(data)
+    : bias{}, dataPublic(data)
  {
     I2C_Init(&i2c, imu_cfg.i2c_ctx);
 
@@ -37,7 +38,30 @@
     data.a_y = ((float) mpu.raw_data.accel_y) * accel_scale;
     data.a_z = ((float) mpu.raw_data.accel_z) * accel_scale;
     
-    data.omega_x = ((float) mpu.raw_data.gyro_x) * gyro_scale;
-    data.omega_y = ((float) mpu.raw_data.gyro_y) * gyro_scale;
-    data.omega_z = ((float) mpu.raw_data.gyro_z) * gyro_scale;
+    data.omega_x = ((float) mpu.raw_data.gyro_x) * gyro_scale - bias.omega_bx;
+    data.omega_y = ((float) mpu.raw_data.gyro_y) * gyro_scale - bias.omega_by;
+    data.omega_z = ((float) mpu.raw_data.gyro_z) * gyro_scale - bias.omega_bz;
+}
+
+void IMU::calibrate() {
+   uint16_t N = 500;
+   float omega_bx_sum = 0, omega_by_sum = 0, omega_bz_sum = 0;
+
+   Delay::ms(1000);
+
+   for (int i = 0; i < N; i++) {
+      updateData();
+      omega_bx_sum += data.omega_x;
+      omega_by_sum += data.omega_y;
+      omega_bz_sum += data.omega_z;
+   }
+   
+   float omega_bx, omega_by, omega_bz;
+   omega_bx = omega_bx_sum / N;
+   omega_by = omega_by_sum / N;
+   omega_bz = omega_bz_sum / N;
+
+   bias.omega_bx = omega_bx;
+   bias.omega_by = omega_by;
+   bias.omega_bz = omega_bz;
 }
