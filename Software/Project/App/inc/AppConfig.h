@@ -12,10 +12,10 @@
 extern "C" {
 #endif
 
-#include "../../Middleware/inc/LEDConfig.h" //"LEDConfig.h" //"../../Middleware/inc/LEDConfig.h"
-#include "../../Middleware/inc/TimerConfig.h" //"TimerConfig.h" //"../../Middleware/inc/TimerConfig.h"
-#include "../../Middleware/inc/MotorConfig.h" //"MotorConfig.h" //"../../Middleware/inc/MotorConfig.h"
-#include "../../Middleware/inc/IMUConfig.h" //"IMUConfig.h" //"../../Middleware/inc/IMUConfig.h"
+#include "LEDConfig.h" //"LEDConfig.h" //"../../Middleware/inc/LEDConfig.h"
+#include "TimerConfig.h" //"TimerConfig.h" //"../../Middleware/inc/TimerConfig.h"
+#include "MotorConfig.h" //"MotorConfig.h" //"../../Middleware/inc/MotorConfig.h"
+#include "IMUConfig.h" //"IMUConfig.h" //"../../Middleware/inc/IMUConfig.h"
 
 typedef struct App_Config {
 	LED_Config_t led_cfg;

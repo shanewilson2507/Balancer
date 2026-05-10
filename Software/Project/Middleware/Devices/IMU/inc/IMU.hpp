@@ -9,7 +9,7 @@
 #define MIDDLEWARE_INC_IMU_HPP_
 
 #include "IMUConfig.h"
-#include "../../Peripherals/MPU6050/inc/MPU6050_Driver.h" // MPU6050_Driver.h // "../../Peripherals/MPU6050/inc/MPU6050_Driver.h"
+#include "MPU6050_Driver.h" // MPU6050_Driver.h // "../../../../Peripherals/MPU6050/inc/MPU6050_Driver.h"
 
 struct IMU_Data {
     float a_x; // m/s^2

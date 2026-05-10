@@ -9,7 +9,7 @@
 #define MIDDLEWARE_INC_MOTOR_HPP_
 
 #include "MotorConfig.h"
-#include "../../Platform/inc/PWM.h" // "PWM.h"
+#include "PWM.h" // "PWM.h"
 
 class Motor {
     PWM_t pwm;

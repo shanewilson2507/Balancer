@@ -1,24 +1,20 @@
 # ========================================
-# Middleware Library
+# Middleware Interface Library
 # ========================================
 
-# Collect Middleware source files
-file(GLOB_RECURSE MIDDLEWARE_SRCS
-    src/*.c
-    src/*.cpp
-)
+# Create a interface library for Middleware
+add_library(Middleware INTERFACE)
 
-# Create a static library for Middleware
-add_library(Middleware STATIC ${MIDDLEWARE_SRCS})
+# Add subdirectories
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Communication)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Control)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Services)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Devices)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Math)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Observers)
 
 # Apply platform compile flags
-target_compile_options(Middleware PUBLIC ${PLATFORM_COMPILE_FLAGS})
+target_compile_options(Middleware INTERFACE ${PLATFORM_COMPILE_FLAGS})
 
-# Public include directories (Middleware interface headers)
-target_include_directories(Middleware PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/inc)
-
-# Dependencies
-#target_link_libraries(Middleware PUBLIC PlatformInterface)
-
-# Middleware depends on the platform library
-target_link_libraries(Middleware PUBLIC Platform Common Peripherals)
+#link libraries
+target_link_libraries(Middleware INTERFACE Communication Control Devices Math Observers Services)

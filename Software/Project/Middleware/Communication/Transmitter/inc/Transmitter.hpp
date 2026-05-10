@@ -8,7 +8,7 @@
 #ifndef MIDDLEWARE_INC_TRANSMITTER_HPP_
 #define MIDDLEWARE_INC_TRANSMITTER_HPP_
 
-#include  "../../Platform/inc/USB.h" // "USB.h" // "../../Platform/inc/USB.h"
+#include  "USB.h" // "USB.h" // "../../../../Platform/inc/USB.h"
 #include <string>
 
 class Transmitter {

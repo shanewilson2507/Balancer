@@ -5,9 +5,9 @@
  *      Author: shanewilson2507
  */
 
-#include "../../Platform/inc/TIM.h"//"TIM.h"
+#include "TIM.h"//"TIM.h"
 #include "TimerConfig.h"
-#include "../../Common/inc/Callback.h" //"Callback.h"
+#include "Callback.h" //"Callback.h"
 
 
 //TODO: Add functionality to change the Timer period in TIM_t and then set default in the constructor

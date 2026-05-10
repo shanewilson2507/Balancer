@@ -12,7 +12,7 @@
 extern "C" {
 #endif
 
-#include "../../Platform/inc/GPIO.h" //"GPIO.h" //"../../Platform/inc/GPIO.h"
+#include "GPIO.h" //"GPIO.h" //"../../../../Platform/inc/GPIO.h"
 
 typedef struct LED_Config {
 	GPIO_Context_t* gpio_ctx;

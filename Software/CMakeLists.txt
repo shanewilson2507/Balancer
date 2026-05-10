@@ -63,11 +63,7 @@ if(NOT ENABLE_TESTING)
     # Wrap static libs so the linker rescans archives (closer to CubeIDE/GCC makefile behavior)
     target_link_libraries(${TARGET_NAME}.elf PRIVATE
         -Wl,--start-group
-        Common
         App
-        Peripherals
-        Middleware
-        Platform
         -Wl,--end-group
     )
 

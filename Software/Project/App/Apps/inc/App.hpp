@@ -1,15 +1,12 @@
 #pragma once
 
 #include "AppConfig.h"
-#include "../../Middleware/inc/LED.hpp" //"LED.hpp" //"../../Middleware/inc/LED.hpp"
-#include "../../Middleware/inc/Timer.hpp" //"Timer.hpp" //"../../Middleware/inc/Timer.hpp"
-#include "../../Common/inc/Callback.h"//"Callback.h"
-#include  "../../Middleware/inc/Motor.hpp" // "Motor.hpp"
-#include "../../Middleware/inc/Transmitter.hpp" // "Transmitter.hpp"
-#include "../../Middleware/inc/IMU.hpp" // "IMU.hpp"
-
-//TODO: Remove all relative includes
-//TODO: add static and const wherever required
+#include "LED.hpp" //"LED.hpp" //"../../Middleware/inc/LED.hpp"
+#include "Timer.hpp" //"Timer.hpp" //"../../Middleware/inc/Timer.hpp"
+#include "Callback.h"//"Callback.h"
+#include  "Motor.hpp" // "Motor.hpp"
+#include "Transmitter.hpp" // "Transmitter.hpp"
+#include "IMU.hpp" // "IMU.hpp"
 
 struct AppFlags {
     bool update_state_estimate = false;

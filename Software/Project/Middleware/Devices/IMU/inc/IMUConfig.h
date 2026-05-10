@@ -12,7 +12,7 @@
 extern "C" {
 #endif
 
-#include "../../Platform/inc/I2C.h" //"I2C.h" //"../../Platform/inc/I2C.h"
+#include "I2C.h" //"I2C.h" //"../../../../Platform/inc/I2C.h"
 
 typedef struct IMU_Config {
     I2C_Context_t* i2c_ctx;

@@ -47,5 +47,7 @@ endif()
 
 add_subdirectory(${PLATFORM_DIR})
 
+target_link_libraries(PlatformInterface INTERFACE Platform)
+
 # Propagate platform source list upward to parent
 set(PLATFORM_SRCS ${PLATFORM_SRCS} PARENT_SCOPE)

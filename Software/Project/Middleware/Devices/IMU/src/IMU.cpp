@@ -6,9 +6,9 @@
  */
 
 #include "IMU.hpp"
-#include "../../Peripherals/MPU6050/inc/MPU6050.h" // "MPU6050.h" // "../../Peripherals/MPU6050/inc/MPU6050.h"
-#include "../../Common/inc/Constants.h" // "Constants.h" // "../../Common/inc/Constants.h"
-#include "../inc/Delay.hpp" // "Delay.hpp"
+#include "MPU6050.h" // "MPU6050.h" // "../../../../Peripherals/MPU6050/inc/MPU6050.h"
+#include "Constants.h" // "Constants.h" // "../../../../Common/inc/Constants.h"
+#include "Delay.hpp" // "Delay.hpp"
 
  IMU::IMU(const IMU_Config_t& imu_cfg) 
     : bias{}, dataPublic(data)

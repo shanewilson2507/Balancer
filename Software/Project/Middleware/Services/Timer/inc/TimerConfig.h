@@ -12,7 +12,7 @@
 extern "C" {
 #endif
 
-#include "../../Platform/inc/TIM.h"///"TIM.h" //"../../Platform/inc/TIM.h"
+#include "TIM.h"///"TIM.h" //"../../Platform/inc/TIM.h"
 
 typedef struct TimerConfig {
 	TIM_t* tim;

@@ -12,7 +12,7 @@
 extern "C" {
 #endif
 
-#include "../../Platform/inc/PWM.h" //"PWM.h"
+#include "PWM.h" //"PWM.h"
 
 typedef struct MotorConfig {
     PWM_Context_t* pwm_ctx;
