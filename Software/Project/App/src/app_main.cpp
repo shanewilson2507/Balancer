@@ -2,10 +2,10 @@
 #include "App.hpp"
 #include "AppConfig.h"
 
-#include "TrimIdentificationApp.hpp"
+#include "SystemIdentificationApp.hpp"
 
 extern "C" void app_main(const App_Config_t* cfg) {
-    TrimIdentificationApp app = *cfg;
+    SystemIdentificationApp app = *cfg;
     App* a = &app;
     a->main();
 }

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "App.hpp"
 
 class TrimIdentificationApp : public App {

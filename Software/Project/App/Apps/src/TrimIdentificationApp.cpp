@@ -43,21 +43,19 @@ void TrimIdentificationApp::main(void) {
 
 	while(time_ms <= MAX_TIME) {
 
-        if (flags.update_motor_command) {
+        if (flags.flag_100Hz) {
+			flags.flag_100Hz = false;
+			
+			//update motor command
             float uL = trimThrottleStepFunction(time_ms);
             float uR = TrimIdentificationApp::TRIM_SUM - uL;
             leftMotor.setThrottlePercentage(uL);
             rightMotor.setThrottlePercentage(uR);
-            flags.update_motor_command = false;
-        }
 
-		if (flags.update_imu) {
+			//update imu
 			imu.updateData();
-			flags.update_imu = false;		
-		}
 
-		if (flags.send_data) {
-
+			//telemetry
 			snprintf(buff, sizeof(buff), "%u, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f",
          		(uint16_t)time_ms,
 				leftMotor.getThrottlePercentage(),
@@ -65,9 +63,8 @@ void TrimIdentificationApp::main(void) {
 				imuData.a_x, imuData.a_y, imuData.a_z,
          		imuData.omega_x, imuData.omega_y, imuData.omega_z);
 
-			transmitter.sendLine(std::string(buff));
-			flags.send_data = false;
-		}
+			transmitter.sendLine(std::string(buff));			
+        }
 	}
 	
 	rightMotor.setThrottlePercentage(0.0f);

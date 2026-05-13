@@ -9,10 +9,11 @@
 #include "IMU.hpp" // "IMU.hpp"
 
 struct AppFlags {
-    bool update_state_estimate = false;
-    bool update_motor_command = false;
-    bool update_imu = false;
-    bool send_data = false;
+    bool flag_1Hz = false;
+    bool flag_10Hz = false;
+    bool flag_100Hz = false;
+    bool flag_500Hz = false;
+    bool flag_1kHz = false;
 };
 
 class App {

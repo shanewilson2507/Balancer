@@ -18,13 +18,11 @@ App::App(const App_Config_t& cfg)
 void App::flagUpdateCallback(void* flags) {
 	AppFlags* appFlags = (AppFlags*) flags;
 	
-
-	//10ms task divider
-	if (time_ms % 10 == 0) {
-		appFlags->update_imu = true;
-		appFlags->send_data = true;
-		appFlags->update_motor_command = true;
-	}
+	if (time_ms % 1 == 0) appFlags->flag_1kHz = true;
+	if (time_ms % 2 == 0) appFlags->flag_500Hz = true;
+	if (time_ms  % 10 == 0) appFlags->flag_100Hz = true;
+	if (time_ms % 100 == 0) appFlags->flag_10Hz = true;
+	if (time_ms % 1000 == 0) appFlags->flag_1Hz = true;
 
 	time_ms++;
 }
